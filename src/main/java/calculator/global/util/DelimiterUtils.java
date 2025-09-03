@@ -1,5 +1,6 @@
 package calculator.global.util;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,4 +11,11 @@ public class DelimiterUtils {
         Matcher matcher = pattern.matcher(text);
         return matcher.group(1);
     }
+
+    public static List<Integer> mapToInteger(List<String> textList) {
+        return textList.stream()
+                .map(Integer::parseInt)
+                .toList();
+    }
+
 }

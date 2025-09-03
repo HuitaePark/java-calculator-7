@@ -1,5 +1,7 @@
 package calculator.domain;
 
+import static calculator.global.util.DelimiterUtils.mapToInteger;
+
 import calculator.domain.delimiter.Delimiter;
 import calculator.domain.delimiter.DelimiterFactory;
 import calculator.ui.InputView;
@@ -21,6 +23,9 @@ public class Calculator {
 
         Delimiter delimiter = DelimiterFactory.create(text);
         List<String> separatedText = delimiter.separateString(text);
+        List<Integer> numberList = mapToInteger(separatedText);
+        
+
     }
 
 
