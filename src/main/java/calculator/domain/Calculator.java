@@ -1,5 +1,7 @@
 package calculator.domain;
 
+import calculator.domain.delimiter.Delimiter;
+import calculator.domain.delimiter.DelimiterFactory;
 import calculator.ui.InputView;
 import calculator.ui.OutputView;
 import java.util.List;
@@ -15,12 +17,14 @@ public class Calculator {
 
     public void functioning() {
         printStartMessage();
-        List<String> delimitedString = inputView.inputText();
+        String text = inputView.inputText();
 
+        Delimiter delimiter = DelimiterFactory.create(text);
+        List<String> separatedText = delimiter.separateString(text);
     }
 
 
-    public void printStartMessage() {
+    private void printStartMessage() {
         outputView.printCalculatorStartMessage();
     }
 
