@@ -15,4 +15,7 @@ public class InputView {
         return Console.readLine();
     }
 
+    public String inputText() {
+        return Console.readLine();
+    }
 }

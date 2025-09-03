@@ -12,8 +12,12 @@ public class Calculator {
         this.outputView = outputView;
     }
 
-    public void start() {
+    public void functioning() {
         printStartMessage();
+        String text = inputView.inputText();
+        //구분자에 보내서 변환
+        //계산기에서 더함
+        //아웃풋 뷰에서 출력
     }
 
     public void printStartMessage() {
