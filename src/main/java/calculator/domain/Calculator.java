@@ -20,7 +20,6 @@ public class Calculator {
     public void functioning() {
         printStartMessage();
         String text = inputView.inputText();
-
         Delimiter delimiter = DelimiterFactory.create(text);
         List<String> separatedText = delimiter.separateString(text);
         List<Integer> numberList = mapToInteger(separatedText);

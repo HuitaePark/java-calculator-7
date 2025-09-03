@@ -12,12 +12,12 @@ public class CustomDelimiter implements Delimiter {
 
     @Override
     public List<String> separateString(String text) {
-        text = splittingText(text);
-        return List.of(text.split(delimiter));
+        String splitting = splittingText(text);
+        return List.of(splitting.split(delimiter));
     }
 
     private String splittingText(String text) {
-        int beginIndex = 6;
-        return text.substring(beginIndex);
+        int newLineIndex = text.indexOf("n") + 1;
+        return text.substring(newLineIndex);
     }
 }

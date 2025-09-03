@@ -1,15 +1,12 @@
 package calculator.global.util;
 
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class DelimiterUtils {
 
     public static String extractionString(String text) {
-        Pattern pattern = Pattern.compile("//(.)\n");
-        Matcher matcher = pattern.matcher(text);
-        return matcher.group(1);
+        int customDelimiterIndex = 2;
+        return String.valueOf(text.charAt(customDelimiterIndex));
     }
 
     public static List<Integer> mapToInteger(List<String> textList) {
