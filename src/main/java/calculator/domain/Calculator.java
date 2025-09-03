@@ -25,7 +25,7 @@ public class Calculator {
         List<String> separatedText = delimiter.separateString(text);
         List<Integer> numberList = mapToInteger(separatedText);
         int sum = combineElement(numberList);
-
+        outputView.printCalculatorResultMessage(sum);
     }
 
 

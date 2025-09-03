@@ -1,14 +1,16 @@
 package calculator.ui;
 
+import static calculator.global.constant.CalculatorMessage.CALCULATOR_RESULT_MESSAGE;
 import static calculator.global.constant.CalculatorMessage.CALCULATOR_START_MESSAGE;
 
 public class OutputView {
 
-    public void printCalculatorStartMessage(){
-        println(CALCULATOR_START_MESSAGE);
+    public void printCalculatorStartMessage() {
+        System.out.println(CALCULATOR_START_MESSAGE);
     }
 
-    private void println(String text){
-        System.out.println(text);
+    public void printCalculatorResultMessage(int result) {
+        System.out.println(CALCULATOR_RESULT_MESSAGE + result);
     }
+
 }
