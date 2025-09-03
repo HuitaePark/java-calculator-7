@@ -1,19 +1,13 @@
 package calculator.domain.delimiter;
 
 
-import calculator.ui.InputView;
+import static calculator.global.util.DelimiterUtils.extractionString;
+import static calculator.global.util.Validator.hasCustomDelimiter;
 
 public class DelimiterFactory {
-
-    private final InputView inputView;
-
-    public DelimiterFactory(InputView inputView) {
-        this.inputView = inputView;
-    }
-
     Delimiter create(String text) {
-        if (inputView.hasCustomDelimiter(text)) {
-            return new CustomDelimiter(inputView.extractionString(text));
+        if (hasCustomDelimiter(text)) {
+            return new CustomDelimiter(extractionString(text));
         }
         return new NormalDelimiter();
     }
