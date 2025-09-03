@@ -24,7 +24,7 @@ public class Calculator {
         Delimiter delimiter = DelimiterFactory.create(text);
         List<String> separatedText = delimiter.separateString(text);
         List<Integer> numberList = mapToInteger(separatedText);
-        
+        int sum = combineElement(numberList);
 
     }
 
@@ -33,5 +33,9 @@ public class Calculator {
         outputView.printCalculatorStartMessage();
     }
 
-
+    private int combineElement(List<Integer> numList) {
+        return numList.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
 }
