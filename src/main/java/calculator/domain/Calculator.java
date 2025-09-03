@@ -2,6 +2,7 @@ package calculator.domain;
 
 import calculator.ui.InputView;
 import calculator.ui.OutputView;
+import java.util.List;
 
 public class Calculator {
     private final InputView inputView;
@@ -14,10 +15,8 @@ public class Calculator {
 
     public void functioning() {
         printStartMessage();
-        String text = inputView.inputText();
-        //구분자에 보내서 변환
-        //계산기에서 더함
-        //아웃풋 뷰에서 출력
+        List<String> delimitedString = inputView.inputText();
+
     }
 
     public void printStartMessage() {
