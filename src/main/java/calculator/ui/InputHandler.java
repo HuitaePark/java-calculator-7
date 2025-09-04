@@ -3,7 +3,7 @@ package calculator.ui;
 
 import camp.nextstep.edu.missionutils.Console;
 
-public class InputView {
+public class InputHandler {
 
     public String inputText() {
         return Console.readLine();
