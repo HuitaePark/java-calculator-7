@@ -1,12 +1,17 @@
 package calculator.domain;
 
-import java.util.List;
-
 public class Calculator {
 
-    public int combineElement(List<Integer> numList) {
-        return numList.stream()
-                .mapToInt(Integer::intValue)
+    private final Operands operands;
+
+    public Calculator(String inputValue) {
+        Delimiter delimiter = new Delimiter(inputValue);
+        this.operands = new Operands(delimiter.splitByDelimiter(inputValue));
+    }
+
+    public int combineElement() {
+        return operands.getOperands().stream()
+                .mapToInt(Operand::getOperand)
                 .sum();
     }
 
