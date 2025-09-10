@@ -19,7 +19,11 @@ public class Operand {
 
     private int parseToInt(String element) {
         try {
+            if (element.isEmpty()) {
+                return 0;
+            }
             return Integer.parseInt(element);
+
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException(NOT_STRING_MESSAGE);
         }
@@ -27,7 +31,7 @@ public class Operand {
     }
 
     private void validatePositiveNumber(int operand) {
-        if (operand <= 0) {
+        if (operand < 0) {
             throw new IllegalArgumentException(NUMBER_NEGATIVE_ERROR_MESSAGE);
         }
     }
